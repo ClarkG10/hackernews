@@ -23,7 +23,7 @@ class CommentRequest extends FormRequest
     {
         return [
             'comment' => 'required|string',
-            'user_id' => 'required|integer',
+            'user_id' => 'integer',
             'content_id' => 'required|integer',
         ];
     }

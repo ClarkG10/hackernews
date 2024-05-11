@@ -51,6 +51,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/comment/{id}',             'update');
         Route::delete('/comment/{id}',          'destroy');
     });
-
     Route::get('/profile/show',  [ProfileController::class, 'show']);
 });

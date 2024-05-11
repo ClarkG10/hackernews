@@ -19,7 +19,7 @@ class ContentController extends Controller
 
         if ($request->keyword) {
             $content->where(function ($query) use ($request) {
-                $query->where('title', 'like', '%' . $request->keyword . '%');
+                $query->where('title', 'like', '%', $request->keyword, '%');
             });
         }
 
