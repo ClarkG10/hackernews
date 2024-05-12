@@ -70,6 +70,23 @@ class ContentController extends Controller
     }
 
     /**
+     * Update the email of the specified resource in storage.
+     */
+    public function points(ContentRequest $request, string $id)
+    {
+        $content = Content::findOrFail($id);
+
+        // Retrieve the validated input data...
+        $validated = $request->validated();
+
+        $content->points =  $validated['points'];
+
+        $content->save();
+
+        return $content;
+    }
+
+    /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)

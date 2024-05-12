@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('image');
             $table->text('role');
-            $table->text('points')->nullable();
             $table->timestamps();
         });
 

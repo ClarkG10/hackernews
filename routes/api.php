@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\ContentController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\PointController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::get('/comment', [CommentController::class, 'index']);
 Route::get('/content', [ContentController::class, 'index']);
 Route::post('/comment', [CommentController::class, 'store']);
+
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout']);
@@ -52,4 +54,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::delete('/comment/{id}',          'destroy');
     });
     Route::get('/profile/show',  [ProfileController::class, 'show']);
+    Route::post('/points/{id}', [ContentController::class, 'points']);
 });
